@@ -49,10 +49,9 @@ correct: list[int] = []
 incorrect: list[int] = []
 none: list[int] = []
 
-START = 0
-END = 1000
+NUM_TO_TEST = int(sys.argv[2])
 
-for i in range(START, END):
+for i in range(NUM_TO_TEST):
     res, song_name = test(sys.argv[1], sys.argv[2])
     if res == -1:
         print(i, song_name)

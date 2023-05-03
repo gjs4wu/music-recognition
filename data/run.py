@@ -5,14 +5,18 @@ import sox
 import random
 import os
 
+FIRST_TRIM = 20
+
 num_samples = 1
 actions = [""]
 tfm = sox.Transformer()
 cmb = sox.Combiner()
 song = sys.argv[1]
+new_samples = int(sys.argv[2])
+
 
 def get_filename(index: int):
-    return song + "inputs/" + str(index).zfill(4) + ".wav"
+    return song + "/inputs/" + str(index).zfill(4) + ".wav"
 
 
 def write(base: int, action: str):
@@ -77,10 +81,6 @@ def loud(base: int):
     num_samples += 1
 
 
-def random_noise(base: int):
-    print("noise")
-
-
 def real_noise(base: int):
     global num_samples
     cmb.clear_effects()
@@ -118,7 +118,7 @@ def echo(base: int):
 
 def new_sample(base: int):
     rand = random.randint(0, 4)
-    if base < 20:
+    if base < FIRST_TRIM:
         rand = 0
 
     if rand == 0:
@@ -139,8 +139,6 @@ def new_sample(base: int):
 
 if __name__ == "__main__":
 
-    new_samples = 1000
-
     counts = [0] * new_samples
 
     for i in range(new_samples - 1):
@@ -154,6 +152,6 @@ if __name__ == "__main__":
 
         new_sample(base)
 
-    results = open(song + "results.txt", "w")
+    results = open(song + "/results.txt", "w")
     for i in range(len(actions)):
         results.write(str(i) + ": " + str(actions[i]) + "\n")
