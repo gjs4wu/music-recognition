@@ -361,7 +361,6 @@ def match(apikey, path, meta=DEFAULT_META, parse=True, force_fpcalc=False,
     compress, usermeta, sources.
     """
     duration, fp = fingerprint_file(path, force_fpcalc=force_fpcalc)
-    print(fp)
     response = lookup(apikey, fp, duration, meta, timeout)
     if parse:
         return parse_lookup_result(response)

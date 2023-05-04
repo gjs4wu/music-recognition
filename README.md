@@ -19,8 +19,8 @@ There are 5 types of audio manipulations that are performed:
 * Trim: Shorten the length of the sample by 1 second
 * Quiet: Decrease the volume
 * Loud: Increase the volume
-* Noise: Combine the audio sample with one of the real-world noise audio samples from /noises
 * Echo: Add an echo to the sample
+* Noise: Combine the audio sample with one of the real-world noise audio samples from /noises
 
 The function picks a random sample from the /inputs folder and adds a random audio manipulation, then adds the new sample back to the /inputs folder, and repeats. This generates a large number of inputs with multiple audio modifications in different combinations. 
 
