@@ -49,7 +49,7 @@ correct: list[int] = []
 incorrect: list[int] = []
 none: list[int] = []
 
-NUM_TO_TEST = int(sys.argv[2])
+NUM_TO_TEST = int(sys.argv[3])
 
 for i in range(NUM_TO_TEST):
     res, song_name = test(sys.argv[1], sys.argv[2])

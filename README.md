@@ -27,7 +27,7 @@ The function picks a random sample from the /inputs folder and adds a random aud
 The series of modifications for each sample is recorded in results.txt in each song folder. The results from the evaluation of 1000 samples are in the results_1000.txt files.
 <br></br>
 
-#### *NOTE: For the first 20 audio samples, only the TRIM modification is performed. This is because if major modifications (adding very loud background noise) are added early on, then almost all generated samples will have that modification, decreasing the variety. If you are generating a much lower number of samples, decrease the FIRST_TRIM variable at the top of `data/run.py` to 5-10*
+#### *NOTE: For the first 20 audio samples, only the TRIM modification is performed. This is because if major modifications (adding very loud background noise) are added early on, then almost all generated samples will have that modification, decreasing the variety. If you are generating a much lower number of samples, decrease the FIRST_TRIM variable at the top of `data/run.py` to # of samples/50 *
 
 <br></br>
 If you wish to clear all generated noisy inputs for a song, run

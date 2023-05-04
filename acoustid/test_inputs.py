@@ -47,7 +47,7 @@ def test(path: str, correct_song: str):
     for result in response['results']:
         for recording in result["recordings"]:
             if recording["title"].find(correct_song) != -1:
-                print(recording["title"], result["score"])
+                print(recording["title"])
                 return 1, correct_song
             else:
                 incorrect = recording["title"]

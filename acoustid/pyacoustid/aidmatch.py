@@ -16,7 +16,6 @@ from __future__ import print_function
 """Example script that identifies metadata for files specified on the
 command line.
 """
-# from acoustid.pyacoustid import acoustid
 import acoustid
 import sys
 
