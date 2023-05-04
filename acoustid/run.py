@@ -40,7 +40,6 @@ def aidmatch(filename):
     try:
         duration, fp = acoustid.fingerprint_file(filename)
         response = acoustid.lookup(API_KEY, fp, duration, meta=['recordings', 'usermeta'])
-        print(response)
     except acoustid.NoBackendError:
         print("chromaprint library/tool not found", file=sys.stderr)
         sys.exit(1)
@@ -51,15 +50,12 @@ def aidmatch(filename):
         print("web service request failed:", exc.message, file=sys.stderr)
         sys.exit(1)
 
-    # first = True
-    # for score, rid, title, artist in results:
-    #     if first:
-    #         first = False
-    #     else:
-    #         print()
-    #     print_('%s - %s' % (artist, title))
-    #     print_('http://musicbrainz.org/recording/%s' % rid)
-    #     print_('Score: %i%%' % (int(score * 100)))
+    if len(response["results"]) == 0:
+        print("none")
+        return
+    for result in response['results']:
+        for recording in result["recordings"]:
+            print(recording["title"])
 
 
 if __name__ == '__main__':

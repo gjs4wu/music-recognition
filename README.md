@@ -97,7 +97,7 @@ To run ACRCloud on a single audio file:
 
 ## Test all noisy inputs for single song
 
-To run ACRCloud on set of (1000) noisy data samples (this will take awhile):
+To run ACRCloud on set of noisy data samples:
 ```
 ./acr/test_inputs.py <name of song folder> <correct song name> <# of samples to test>
 ```
@@ -109,20 +109,55 @@ example:
 
 Pass in the number of noisy samples you generated for the song in the first section. 
 
-*NOTE: If you are testing a low number of samples, Shazam may correctly identify all samples, depending on which song you are testing*
+*NOTE: If you are testing a low number of samples, ACR may correctly identify all samples, depending on which song you are testing*
+
 ## Test all noisy inputs for all songs
 
-To run ACRCloud on all noisy audio sets for all 8 songs (this will take a very very long while):
-
-*I do not recommend runnning this unless you want to wait a very long time*
+To run ACRCloud on all noisy audio sets for all 8 songs:
 
 ```
 ./run_all_acr.sh
 ```
+
+*If runnning this make sure you have generated samples for all songs*
 
 Results from each song are available in `./acr/<song_name>/results.txt`
 <br></br>
 
 # AcoustID
 
+AcoustID is free and not rate-limited or query limited, so I have left my API key in the acoustID files so they should run without a problem. 
 
+## Single song query
+
+To run AcoustID on a single audio file:
+```
+./acoustid/run.py <path/to/audio_file>
+```
+
+## Test all noisy inputs for single song
+
+To run ACRCloud on set of noisy data samples:
+```
+./acoustid/test_inputs.py <name of song folder> <correct song name> <# of samples to test>
+```
+
+example:
+```
+./acoustid/test_inputs.py green_light 'Green Light' 100
+```
+
+Pass in the number of noisy samples you generated for the song in the first section. 
+
+## Test all noisy inputs for all songs
+
+To run ACRCloud on all noisy audio sets for all 8 songs (this will take a very very long while):
+
+```
+./run_all_acoustid.sh
+```
+
+*If runnning this make sure you have generated samples for all songs*
+
+Results from each song are available in `./acoustid/<song_name>_results.txt`
+<br></br>
