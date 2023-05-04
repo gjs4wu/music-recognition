@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # This file is part of pyacoustid.
 # Copyright 2012, Lukas Lalinsky.
