@@ -1,3 +1,10 @@
+# Fuzzing Song Recognition Tools 
+
+# Setup
+
+To download all necessary packages and tools, run `setup.sh`. I used Python 3.10, but I think it should work with Python 3.8 and later
+
+
 # Generating noisy audio samples
 
 There are 8 songs for which I have generated samples, each of which has its own folder in the /data folder. Each song starts with 1 sample, a 15-second unmodified clip from the target song, which can be found at both sample.wav and /inputs/0000.wav in each song folder.  
