@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.10
+#!/usr/bin/env python
 
 filenames = [ "clair_de_lune", "green_light", "jolene", "la_vie_en_rose", "money_machine", "novacane", "rhyme_dust", "the_chain"]
 
