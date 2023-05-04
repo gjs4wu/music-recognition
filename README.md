@@ -168,3 +168,11 @@ To run ACRCloud on all noisy audio sets for all 8 songs (this will take a very v
 
 Results from each song are available in `./acoustid/<song_name>_results.txt`
 <br></br>
+
+
+# Analysis
+
+You can run the `data/analyze_mods.py` file to see how different audio modifications affect each tool (figure 3 in the report)
+
+The song specific results are available in the results.txt files in the 3 tool folders. 
+The sample modification logs are available in the results.txt files in the 8 song folders.
